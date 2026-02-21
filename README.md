@@ -20,6 +20,7 @@ By comparing the deallocation logic (io_rsrc_node_destroy) with the reallocation
 ## Two Harnesses
 
 File: tested_io_harness.c
+
 Status: Successfully Ran & Verified
 
 Standard symbolic execution engines (like KLEE) cannot easily compile full Linux subsystems on a standard laptop due to missing headers and complex dependencies. To bypass this, I used Function Extraction. I extracted the exact vulnerable allocator logic from rsrc.c and ran it in an isolated standard KLEE environment.
