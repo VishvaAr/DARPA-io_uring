@@ -30,6 +30,7 @@ What it proves: This harness mathematically verifies the most critical exploit c
 ---------------------------------------------------------------------------------------------------------------
 
 File: stase_io_uring_complete.c
+
 Status: Proposed for STASE
 
 To verify the remaining vulnerabilities (such as the io_kiocb request recycling in io_uring.c and the lock-drop race conditions), I asked an LLM to give me a complete harness. 
@@ -46,5 +47,6 @@ Concurrency Constraints: Standard KLEE executes sequentially. To verify the lock
 ## Output:
 
 Compile: clang-13 -I ~/klee/include -emit-llvm -c -g -fno-discard-value-names darpa_io_uring_harness.c -o darpa_io.bc
+
 Run: klee darpa_io.bc
 
